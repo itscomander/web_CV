@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alejandro Cuadros | Técnico ASIX</title>
+
+  <style>
+    :root {
+      --bg: #182061;
+      --primary: #0f172a;
+      --secondary: #2563eb;
+      --text: #f4f6f8;
+      --muted: #4c5157;
+      --card: rgba(255, 255, 255, 0.95);
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav strong {
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      margin-left: 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      color: var(--secondary);
+    }
+
+    header {
+      padding: 7rem 1.5rem 4rem;
+      text-align: center;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.85),
+        rgba(2, 6, 23, 0.85)
+      );
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.6rem;
+      font-weight: 600;
+    }
+
+    header h2 {
+      margin-top: 0.8rem;
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: #cbd5f5;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 4rem 1.5rem;
+    }
+
+    section h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      color: #020617;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.1);
+      color: #020617;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .two {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .tags span {
+      display: inline-block;
+      background: #e0e7ff;
+      color: #1e3a8a;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 0.25rem;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin-right: 1.5rem;
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer {
+      background: #020617;
+      color: #94a3b8;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<nav>
+  <div class="nav-container">
+    <strong>Alejandro Cuadros</strong>
+    <div>
+      <button onclick="go('about')">Sobre mí</button>
+      <button onclick="go('experience')">Experiencia</button>
+      <button onclick="go('skills')">Habilidades</button>
+      <button onclick="go('languages')">Idiomas</button>
+      <button onclick="go('contact')">Contacto</button>
+      <button onclick="go('CV')">CV</button>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <h1>Alejandro Manuel Cuadros Marchena</h1>
+  <h2>Técnico ASIX · Sistemas · Soporte IT · Ciberseguridad</h2>
+</header>
+
+
+<section id="about">
+  <h3>Sobre mí</h3>
+  <div class="card">
+    <p>
+      Soy Alejandro Cuadros, Técnico en Administración de Sistemas Informáticos en Red (ASIX), con experiencia en soporte IT, 
+      gestión de incidencias y administración básica de entornos Windows, Linux y macOS. He trabajado como técnico auxiliar de informática en el Hospital del Mar (IMIM), 
+      proporcionando soporte presencial y remoto a más de diez centros hospitalarios, donde he desarrollado habilidades en hardware y software, Microsoft 365, Active Directory, 
+      instalación y configuración de sistemas operativos, uso de herramientas de ticketing como Jira y atención a usuarios en entornos de alta exigencia.
+    </p>
+    <p>
+      Además, cuento con conocimientos en redes (TCP/IP y cableado estructurado), MySQL, desarrollo web básico y scripting, así como en mantenimiento de equipos. 
+      Me considero una persona organizada, proactiva y orientada al usuario, con facilidad para el aprendizaje y el trabajo en equipo. Dispongo de competencia nativa en español, 
+      nivel avanzado de catalán y nivel intermedio de inglés, y busco una oportunidad profesional que me permita seguir creciendo y aportar valor desde el primer día.
+    </p>
+  </div>
+</section>
+
+<section id="experience">
+  <h3>Experiencia profesional</h3>
+  <div class="grid two">
+    <div class="card">
+      <h4>Hospital del Mar</h4>
+      <p><strong>Técnico auxiliar de informática · 2024–2025</strong></p>
+      <ul>
+        <li>Soporte IT presencial y remoto</li>
+        <li>Administración de Active Directory</li>
+        <li>Microsoft 365</li>
+        <li>Instalación y mantenimiento de Windows, Linux y macOS</li>
+        <li>Redes TCP/IP</li>
+        <li>Reparación de equipos informáticos</li>
+        <li>Gestión de incidencias mediante herramientas de ticketing (Jira)</li>
+        <li>Soporte remoto con UltraVNC</li>
+        <li>Soporte a más de 10 centros</li>
+        <li>Gestión documental</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h4>CCB Actividades Empresariales, S.L.</h4>
+      <p><strong>Publicidad · 2025</strong></p>
+      <ul>
+        <li>Mantenimiento de cartelería</li>
+        <li>Fijación de cartelería publicitaria</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h3>Habilidades técnicas</h3>
+  <div class="card tags">
+    <span>Windows</span>
+    <span>Linux</span>
+    <span>macOS</span>
+    <span>Active Directory</span>
+    <span>Microsoft 365</span>
+    <span>TCP/IP</span>
+    <span>Python</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>MySQL</span>
+    <span>GitHub</span>
+    <span>Docker</span>
+    <span>Reparación Equipos Informáticos</span>
+    <span>Documentación</span>
+  </div>
+</section>
+
+<section id="languages">
+  <h3>Idiomas</h3>
+  <div class="card">
+    <ul>
+      <li>Español · Nativo</li>
+      <li>Catalán · C1</li>
+      <li>Inglés · B1</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <h3>Contacto</h3>
+  <div class="card contact">
+    <a href="tel:675874717">📞 675 874 717</a>
+    <a href="mailto:alexcuma08@gmail.com">✉️ alexcuma08@gmail.com</a>
+    <a href="https://www.linkedin.com/in/alejandro-cuadros-marchena/" target="_blank" rel="noopener">
+      LinkedIn
+    </a>
+  </div>
+</section>
+
+<section id="CV">
+  <h3>Mi CV</h3>
+  <div class="card cv-container">
+    <img src="C:\Users\caval\Pictures\CV.png" alt="Currículum Vitae de Alejandro Cuadros">
+  </div>
+  <div style="margin-top: 2rem;">
+      <a href="C:\Users\caval\Pictures\CV_Alejandro_Cuadros.pdf" download
+         style="
+           display: inline-block;
+           background: #2563eb;
+           color: #ffffff;
+           padding: 0.8rem 1.6rem;
+           border-radius: 999px;
+           text-decoration: none;
+           font-weight: 500;
+           transition: background 0.3s ease;
+         "
+         onmouseover="this.style.background='#1e40af'"
+         onmouseout="this.style.background='#2563eb'">
+        📄 Descargar CV
+      </a>
+    </div>
+      <div style="margin-top: 2rem;">
+      <a href="C:\Users\caval\Pictures\CARTA_PRESENTACIÓN_ALEJANDRO.pdf" download
+         style="
+           display: inline-block;
+           background: #2563eb;
+           color: #ffffff;
+           padding: 0.8rem 1.6rem;
+           border-radius: 999px;
+           text-decoration: none;
+           font-weight: 500;
+           transition: background 0.3s ease;
+         "
+         onmouseover="this.style.background='#1e40af'"
+         onmouseout="this.style.background='#2563eb'">
+        📄 Descargar Carta Presentación
+      </a>
+    </div>
+</section>
+
+<footer>
+  Disponible para nuevas oportunidades · Incorporación inmediata
+</footer>
+
+<script>
+  function go(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+
+ //Fondo animado
+  const canvas = document.getElementById("bg");
+  const ctx = canvas.getContext("2d");
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener("resize", resize);
+  resize();
+
+  const particles = Array.from({ length: 80 }, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    vx: (Math.random() - 0.5) * 0.4,
+    vy: (Math.random() - 0.5) * 0.4,
+  }));
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+      ctx.fillStyle = "#2563eb";
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+      ctx.fill();
+
+      particles.forEach(q => {
+        const dx = p.x - q.x;
+        const dy = p.y - q.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          ctx.strokeStyle = "rgba(37,99,235,0.15)";
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.stroke();
+        }
+      });
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>
+
+</body>
+</html>
